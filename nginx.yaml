@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nginx
-  namespace: argocd     # must match Argo CD's namespace
+  namespace: argo-demo     # must match Argo CD's namespace
 spec:
   project: default
   source:
