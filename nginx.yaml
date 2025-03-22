@@ -13,7 +13,7 @@ spec:
     helm:
       values: |
         service:
-          type: LoadBalancer
+          type: ClusterIP
         replicaCount: 2
   destination:
     server: https://kubernetes.default.svc
