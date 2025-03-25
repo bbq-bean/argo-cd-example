@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: not-a-namespace
+spec:
+  project: default
+  source:
+    repoURL: https:https://github.com/bbq-bean/argo-cd-example.git/app1-example
+    targetRevision: main
+    chart: nginx
+    helm:
+      valueFiles:
+        - nginx/my-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
